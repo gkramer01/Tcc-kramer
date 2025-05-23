@@ -37,7 +37,7 @@ namespace Data.Repositories
 
         public async Task<User?> GetByUsernameAsync(string username)
         {
-             return await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);    
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserName.ToLower() == username.ToLower());
         }
 
         public async Task<bool> ExistsAsync(string username)

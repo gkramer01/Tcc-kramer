@@ -24,9 +24,9 @@ namespace Infrastructure.Mappings
 
             builder.Property(x => x.Id).HasColumnName("id").IsRequired();
             builder.Property(x => x.CreatedAt).HasColumnName("criado_em").IsRequired();
-            builder.Property(x => x.CreatedBy).HasColumnName("criado_por").IsRequired(false);
-            builder.Property(x => x.UpdatedAt).HasColumnName("atualizado_em").IsRequired();
-            builder.Property(x => x.UpdatedBy).HasColumnName("atualizado_por").IsRequired(false);
+            builder.Property(x => x.UpdatedAt).HasColumnName("atualizado_em").IsRequired(false);
+            builder.Property(x => x.DeletedAt).HasColumnName("deletado_em").IsRequired(false);
+            builder.Property(x => x.IsDeleted).HasColumnName("deletado").IsRequired().HasDefaultValue(false);
         }
     }
 }

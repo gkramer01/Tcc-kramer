@@ -40,7 +40,7 @@ namespace Api.Controllers
 
             var tokenResponse = await authenticationService.LoginAsync(request);
 
-            if (!string.IsNullOrEmpty(tokenResponse!.Token))
+            if (tokenResponse is not null || !string.IsNullOrEmpty(tokenResponse!.Token))
             {
                 return Ok(tokenResponse);
             }

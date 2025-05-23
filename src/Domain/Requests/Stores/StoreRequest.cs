@@ -1,0 +1,30 @@
+﻿using Domain.Extensions;
+using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Requests.Stores
+{
+    public class StoreRequest
+    {
+        [Required(ErrorMessage = "Store name is required.")]
+        [MaxLength(100, ErrorMessage = "Store name cannot exceed 100 characters.")]
+        public required string Name { get; set; }
+
+        [MaxLength(200, ErrorMessage = "Address cannot exceed 200 characters.")]
+        public string? Address { get; set; }
+
+        [EmailAddress(ErrorMessage = "Invalid email address format.")]
+        public string? Email { get; set; }
+
+        [FlexibleUrl(ErrorMessage = "Website must be a valid URL.")]
+        public string? Website { get; set; }
+
+        [Range(-90, 90, ErrorMessage = "Latitude must be between -90 and 90.")]
+        public required double Latitude { get; set; }
+
+        [Range(-180, 180, ErrorMessage = "Longitude must be between -180 and 180.")]
+        public required double Longitude { get; set; }
+
+        [Required(ErrorMessage = "At least one brand is required.")]
+        public List<BrandRequest> Brands { get; set; } = [];
+    }
+}

@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using Service.Authentication;
-using System;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace Api
 {
@@ -17,6 +17,7 @@ namespace Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -32,21 +33,64 @@ namespace Api
                     };
                 });
 
-#pragma warning disable CS8604 // Possível argumento de referência nula.
+            // DbContext
             builder.Services.AddDbContext<DefaultDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-#pragma warning restore CS8604 // Possível argumento de referência nula.
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            // Services
             builder.Services.AddControllers();
+            //builder.Services.AddControllers()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+            //        options.JsonSerializerOptions.MaxDepth = 64; // opcional, aumenta a profundidade máxima
+            //    });
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IStoreRepository, StoreRepository>();
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+            // Scalar OpenAPI
             builder.Services.AddOpenApi();
 
-            builder.Services.AddScoped<IUserRepository, UserRepository>();
-            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            // Swagger
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tcc-Api", Version = "v1" });
+
+                // JWT Suporte no Swagger
+                var jwtSecurityScheme = new OpenApiSecurityScheme
+                {
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Description = "Informe seu token JWT no formato: Bearer {seu token}",
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+
+                c.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    { jwtSecurityScheme, Array.Empty<string>() }
+                });
+            });
 
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
             {
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    c.RoutePrefix = string.Empty; // Deixa o Swagger na raiz "/"
+                });
+
                 app.MapOpenApi();
                 app.MapScalarApiReference();
             }
@@ -54,11 +98,12 @@ namespace Api
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DefaultDbContext>();
-                db.Database.EnsureCreated();
+                db.Database.Migrate();
             }
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

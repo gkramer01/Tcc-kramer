@@ -7,24 +7,23 @@ namespace Infrastructure.Context
     public class DefaultDbContext(DbContextOptions<DefaultDbContext> options) : DbContext(options)
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Store> Stores { get; set; }
+        public DbSet<Brand> Brands { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            var mappingTypes = typeof(UserMapping).Assembly
-            .GetTypes()
-            .Where(x => x.IsAssignableTo(typeof(IBaseMapping)))
-            .Where(x => !x.IsAbstract)
-            .ToList();
+            var mappingTypes = typeof(IBaseMapping).Assembly
+                .GetTypes()
+                .Where(t => typeof(IBaseMapping).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 
-            foreach (var mappingType in mappingTypes)
+            foreach (var type in mappingTypes)
             {
-                var mapping = Activator.CreateInstance(mappingType);
-
-                var initializeMethod = mapping!.GetType().GetMethod(nameof(IBaseMapping.MapEntity));
-
-                initializeMethod!.Invoke(mapping, [modelBuilder]);
+                if (Activator.CreateInstance(type) is IBaseMapping mappingInstance)
+                {
+                    mappingInstance.MapEntity(modelBuilder);
+                }
             }
         }
     }
