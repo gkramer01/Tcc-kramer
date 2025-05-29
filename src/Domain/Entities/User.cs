@@ -8,7 +8,7 @@ namespace Domain.Entities
         public required string UserName { get; set; } = string.Empty;
         public required string PasswordHash { get; set; } = string.Empty;
         public required string Email { get; set; } = string.Empty;
-        public required RoleType Role { get; set; } = RoleType.User;
+        public required RoleType Role { get; set; } = RoleType.Customer;
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
     }

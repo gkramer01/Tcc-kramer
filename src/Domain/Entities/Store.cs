@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Domain.Enums;
+using FluentValidation;
 
 namespace Domain.Entities
 {
@@ -8,6 +9,7 @@ namespace Domain.Entities
         public string? Address { get; set; }
         public string? Email { get; set; }
         public string? Website { get; set; }
+        public required List<PaymentConditions> PaymentConditions { get; set; }
         public required double Latitude { get; set; }
         public required double Longitude { get; set; }
         public ICollection<Brand> Brands { get; set; } = [];

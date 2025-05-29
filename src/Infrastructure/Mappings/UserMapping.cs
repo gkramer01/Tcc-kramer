@@ -42,6 +42,8 @@ namespace Infrastructure.Mappings
                 .HasColumnName("refresh_token_epiry_time").
                 IsRequired(false);
 
+            builder.Ignore(b => b.CreatedBy);
+
             builder.HasIndex(u => u.UserName)
                 .IsUnique();
         }

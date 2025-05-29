@@ -1,10 +1,8 @@
-﻿using Domain.Entities;
-
-namespace Domain.Responses
+﻿namespace Domain.Responses
 {
     public class StoreResponse
     {
-        public string Name { get; set; }
+        public required string Name { get; set; }
         public string? Address { get; set; }
         public string? Email { get; set; }
         public string? Website { get; set; }

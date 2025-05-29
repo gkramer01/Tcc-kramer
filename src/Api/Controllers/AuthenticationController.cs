@@ -3,8 +3,10 @@ using Domain.Enums;
 using Domain.Interfaces;
 using Domain.Requests;
 using Domain.Responses;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using IAuthenticationService = Domain.Interfaces.IAuthenticationService;
 
 namespace Api.Controllers
 {
@@ -48,6 +50,7 @@ namespace Api.Controllers
             return BadRequest(new { Message = "Invalid username or password." });
         }
 
+        [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
         [HttpPost("refresh-token")]
         public async Task<ActionResult<TokenResponse>> RefreshToken([FromBody] RefreshTokenRequest request)
         {
@@ -59,11 +62,11 @@ namespace Api.Controllers
             return Ok(tokenResponse);
         }
 
-        [Authorize(Roles = nameof(RoleType.Admin))]
-        [HttpGet("test")]
-        public ActionResult<string> Test()
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
         {
-            return Ok("Autenticado");
+            await HttpContext.SignOutAsync();
+            return Ok(new { message = "Logout realizado com sucesso." });
         }
     }
 }

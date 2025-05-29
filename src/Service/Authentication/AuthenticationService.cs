@@ -45,7 +45,7 @@ namespace Service.Authentication
                 UserName = request.Username,
                 PasswordHash = string.Empty,
                 Email = string.Empty,
-                Role = Domain.Enums.RoleType.User
+                Role = Domain.Enums.RoleType.Customer
             };
 
             user.PasswordHash = new PasswordHasher<User>().HashPassword(user, request.Password);

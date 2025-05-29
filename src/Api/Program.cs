@@ -17,6 +17,18 @@ namespace Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:3000")
+                              .AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowCredentials();
+                    });
+            });
+
             // JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -37,16 +49,12 @@ namespace Api
             builder.Services.AddDbContext<DefaultDbContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // Services
             builder.Services.AddControllers();
-            //builder.Services.AddControllers()
-            //    .AddJsonOptions(options =>
-            //    {
-            //        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-            //        options.JsonSerializerOptions.MaxDepth = 64; // opcional, aumenta a profundidade máxima
-            //    });
+
+            // Services
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IStoreRepository, StoreRepository>();
+            builder.Services.AddScoped<IBrandsRepository, BrandsRepository>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // Scalar OpenAPI
@@ -100,6 +108,8 @@ namespace Api
                 var db = scope.ServiceProvider.GetRequiredService<DefaultDbContext>();
                 db.Database.Migrate();
             }
+
+            app.UseCors("AllowFrontend");
 
             app.UseHttpsRedirection();
 

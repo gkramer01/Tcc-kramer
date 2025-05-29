@@ -1,4 +1,5 @@
-﻿using Domain.Extensions;
+﻿using Domain.Enums;
+using Domain.Extensions;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Requests.Stores
@@ -19,12 +20,17 @@ namespace Domain.Requests.Stores
         public string? Website { get; set; }
 
         [Range(-90, 90, ErrorMessage = "Latitude must be between -90 and 90.")]
+        [Required(ErrorMessage = "Latitude is required.")]
         public required double Latitude { get; set; }
 
         [Range(-180, 180, ErrorMessage = "Longitude must be between -180 and 180.")]
+        [Required(ErrorMessage = "Longitude is required.")]
         public required double Longitude { get; set; }
 
         [Required(ErrorMessage = "At least one brand is required.")]
-        public List<BrandRequest> Brands { get; set; } = [];
+        public List<string> Brands { get; set; } = [];
+
+        [Required(ErrorMessage = "At least one payment condition is required.")]
+        public required List<PaymentConditions> PaymentConditions { get; set; }
     }
 }

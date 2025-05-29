@@ -1,5 +1,7 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Enums;
+using Domain.Interfaces;
 using Domain.Requests.Stores;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -8,8 +10,9 @@ namespace Api.Controllers
     [ApiController]
     public class UserController(IUserRepository repository) : ControllerBase
     {
-        [HttpGet("user/{id}")]
-        public async Task<ActionResult<string>> Update([FromBody] UpdateUserRequest request, Guid id)
+        [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
+        [HttpPut("{id}")]
+        public async Task<ActionResult<string>> Update(Guid id, [FromBody] UpdateUserRequest request)
         {
             var user = await repository.GetByIdAsync(id);
 

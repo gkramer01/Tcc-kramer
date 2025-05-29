@@ -11,12 +11,12 @@ namespace Infrastructure.Mappings
         protected override void MapEntity(EntityTypeBuilder<Store> builder)
         {
             builder.Property(s => s.Name)
-                .HasColumnName("name")
+                .HasColumnName("nome")
                 .IsRequired()
                 .HasMaxLength(100);
 
             builder.Property(s => s.Address)
-                .HasColumnName("address")
+                .HasColumnName("endereco")
                 .IsRequired(false)
                 .HasMaxLength(200);
 
@@ -40,10 +40,14 @@ namespace Infrastructure.Mappings
                 .IsRequired()
                 .HasPrecision(11, 8);
 
+            builder.Property(s => s.PaymentConditions)
+                .HasColumnName("meios_de_pagamento")
+                .IsRequired();
+
             builder.HasMany(s => s.Brands)
                .WithMany(b => b.Stores)
                .UsingEntity<Dictionary<string, object>>(
-                    "StoreBrand", //tabela de junção
+                    "StoreBrand", //tabela de junção - tabela intermediária 
                     join => join
                         .HasOne<Brand>()
                         .WithMany()

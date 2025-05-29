@@ -10,11 +10,12 @@ namespace Infrastructure.Mappings
         protected override void MapEntity(EntityTypeBuilder<Brand> builder)
         {
             builder.Property(b => b.Name)
-                .HasColumnName("name")
+                .HasColumnName("nome")
                 .IsRequired()
                 .HasMaxLength(100);
 
             builder.Ignore(b => b.CreatedAt);
+            builder.Ignore(b => b.CreatedBy);
             builder.Ignore(b => b.UpdatedAt);
             builder.Ignore(b => b.DeletedAt);
             builder.Ignore(b => b.IsDeleted);
