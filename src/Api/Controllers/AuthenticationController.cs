@@ -3,9 +3,11 @@ using Domain.Enums;
 using Domain.Interfaces;
 using Domain.Requests;
 using Domain.Responses;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using IAuthenticationService = Domain.Interfaces.IAuthenticationService;
 
 namespace Api.Controllers
@@ -50,6 +52,21 @@ namespace Api.Controllers
             return BadRequest(new { Message = "Invalid username or password." });
         }
 
+        [HttpPost("login/google")]
+        public async Task<ActionResult<TokenResponse>> LoginWithGoogle([FromBody] GoogleLoginRequest request)
+        {
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(request.IdToken);
+                var response = await authenticationService.GoogleLoginAsync(payload);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
         [HttpPost("refresh-token")]
         public async Task<ActionResult<TokenResponse>> RefreshToken([FromBody] RefreshTokenRequest request)
@@ -65,7 +82,7 @@ namespace Api.Controllers
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync("Cookies");
             return Ok(new { message = "Logout realizado com sucesso." });
         }
     }

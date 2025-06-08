@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using Google.Apis.Auth;
 
 namespace Service.Authentication
 {
@@ -29,6 +30,25 @@ namespace Service.Authentication
             {
                 return null;
             }
+            return await CreateTokenResponseAsync(user);
+        }
+
+        public async Task<TokenResponse?> GoogleLoginAsync(GoogleJsonWebSignature.Payload payload)
+        {
+            var user = await userRepository.GetByUsernameAsync(payload.Email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    Name = payload.Name,
+                    UserName = payload.Email,
+                    Email = payload.Email,
+                    Role = Domain.Enums.RoleType.Customer,
+                    PasswordHash = string.Empty
+                };
+                await userRepository.AddUserAsync(user);
+            }
+
             return await CreateTokenResponseAsync(user);
         }
 

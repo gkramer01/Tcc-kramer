@@ -11,5 +11,10 @@ namespace Data.Repositories
         {
             return await context.Brands.Where(b => ids.Contains(b.Id)).ToListAsync();
         }
+
+        public async Task<List<Brand>> GetAllBrandsAsync()
+        {
+            return await context.Brands.ToListAsync();
+        }
     }
 }

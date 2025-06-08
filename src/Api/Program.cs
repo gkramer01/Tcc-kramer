@@ -43,6 +43,12 @@ namespace Api
                         ValidAudience = builder.Configuration["AppSettings:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!))
                     };
+                })
+                .AddCookie("Cookies", options =>
+                {
+                    options.LoginPath = "/login";
+                    options.LoginPath = "/login/google";
+                    options.LogoutPath = "/logout";
                 });
 
             // DbContext
