@@ -109,11 +109,13 @@ namespace Service.Authentication
 
         private string CreateToken(User user)
         {
-            var claims = new List<Claim>{
-                new (ClaimTypes.Name, user.UserName),
-                new (ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new(ClaimTypes.Role, user.Role.ToString())
-            };
+            var claims = new List<Claim>
+                {
+                    new ("name", user.Name),
+                    new ("email", user.Email),
+                    new ("id", user.Id.ToString()),
+                    new ("role", user.Role.ToString())
+                };
 
             if (user.Role == Domain.Enums.RoleType.Admin)
             {

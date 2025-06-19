@@ -56,5 +56,15 @@ namespace Data.Repositories
             context.Stores.Update(store);
             return context.SaveChangesAsync();
         }
+
+        public async Task<List<Store>> GetByNameAsync(string storeName)
+        {
+            return await context.Stores
+                .Include(s => s.Brands)
+                .Where(s => s.IsDeleted == false && s.Name.Contains(storeName))
+                .OrderBy(s => s.Name)
+                .Take(10)
+                .ToListAsync();
+        }
     }
 }

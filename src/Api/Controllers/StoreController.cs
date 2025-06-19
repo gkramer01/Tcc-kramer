@@ -39,6 +39,29 @@ namespace Api.Controllers
             return Ok(response);
         }
 
+        [HttpGet("search")]
+        public async Task<ActionResult<List<StoreResponse>>> SearchStoresByName([FromQuery] string storeName)
+        {
+            var stores = await storeRepository.GetByNameAsync(storeName);
+
+            var response = stores.Select(stores => new StoreResponse
+            {
+                Name = stores.Name,
+                Address = stores.Address,
+                Email = stores.Email,
+                Website = stores.Website,
+                Latitude = stores.Latitude,
+                Longitude = stores.Longitude,
+                Brands = [.. stores.Brands.Select(b => new BrandResponse
+                {
+                    Id = b.Id,
+                    Name = b.Name
+                })]
+            }).ToList();
+
+            return Ok(response);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<StoreResponse>> GetStoreById(Guid id)
         {

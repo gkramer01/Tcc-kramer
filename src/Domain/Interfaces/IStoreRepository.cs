@@ -1,9 +1,4 @@
 ﻿using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
@@ -15,5 +10,6 @@ namespace Domain.Interfaces
         Task<Store?> GetByIdAsync(Guid id);
         Task<bool> ExistsAsync(string name);
         Task UpdateStoreAsync(Store store);
+        Task<List<Store>> GetByNameAsync(string storeName);
     }
 }

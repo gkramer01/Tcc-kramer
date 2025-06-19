@@ -44,12 +44,12 @@ namespace Api.Controllers
 
             var tokenResponse = await authenticationService.LoginAsync(request);
 
-            if (tokenResponse is not null || !string.IsNullOrEmpty(tokenResponse!.Token))
+            if (tokenResponse is not null || !string.IsNullOrEmpty(tokenResponse?.Token))
             {
                 return Ok(tokenResponse);
             }
 
-            return BadRequest(new { Message = "Invalid username or password." });
+            return Unauthorized(new { Message = "Invalid username or password." });
         }
 
         [HttpPost("login/google")]
