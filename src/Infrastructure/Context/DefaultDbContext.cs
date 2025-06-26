@@ -1,9 +1,11 @@
 ﻿using Domain.Entities;
 using Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Infrastructure.Context
 {
+    [ExcludeFromCodeCoverage]
     public class DefaultDbContext(DbContextOptions<DefaultDbContext> options) : DbContext(options)
     {
         public DbSet<User> Users { get; set; }
