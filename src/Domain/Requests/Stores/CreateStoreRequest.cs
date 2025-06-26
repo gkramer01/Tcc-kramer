@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Requests.Stores
 {
-    public class StoreRequest
+    public class CreateStoreRequest
     {
         [Required(ErrorMessage = "Store name is required.")]
         [MaxLength(100, ErrorMessage = "Store name cannot exceed 100 characters.")]

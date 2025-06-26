@@ -91,7 +91,7 @@ namespace Api.Controllers
 
         [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Shopkeeper)}, {nameof(RoleType.Customer)}, {nameof(RoleType.Seller)}")]
         [HttpPost]
-        public async Task<ActionResult> AddStore([FromBody] StoreRequest request)
+        public async Task<ActionResult> AddStore([FromBody] CreateStoreRequest request)
         {
             var guidList = request.Brands.Select(b => Guid.Parse(b)).ToList();
             var brands = await brandsRepository.GetByIdsListAsync(guidList);

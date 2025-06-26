@@ -112,6 +112,7 @@ namespace Service.Authentication
             var claims = new List<Claim>
                 {
                     new ("name", user.Name),
+                    new ("userName", user.UserName),
                     new ("email", user.Email),
                     new ("id", user.Id.ToString()),
                     new ("role", user.Role.ToString())

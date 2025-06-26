@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 using Domain.Interfaces;
-using Domain.Requests.Stores;
+using Domain.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

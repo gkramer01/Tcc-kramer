@@ -1,4 +1,4 @@
-﻿namespace Domain.Requests.Stores
+﻿namespace Domain.Requests
 {
     public class UpdateUserRequest
     {
