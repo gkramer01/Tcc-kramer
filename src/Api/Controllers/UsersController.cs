@@ -8,17 +8,23 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(IUserRepository repository) : ControllerBase
+    public class UsersController(IUserRepository repository) : ControllerBase
     {
         [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
         [HttpPut("{id}")]
         public async Task<ActionResult<string>> Update(Guid id, [FromBody] UpdateUserRequest request)
         {
             var user = await repository.GetByIdAsync(id);
+            var userByName = await repository.GetByUsernameAsync(request.UserName);
 
-            if (user == null)
+            if (user is null)
             {
                 return NotFound("User not found.");
+            }
+
+            if (userByName is not null)
+            {
+                return BadRequest("UserName already exists.");
             }
 
             if(!ValidateRequest(request))

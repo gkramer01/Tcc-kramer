@@ -9,7 +9,7 @@ namespace Api.Controllers
     [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
     [Route("api/brands")]
     [ApiController]
-    public class BrandController(IBrandsRepository brandsRepository) : ControllerBase
+    public class BrandsController(IBrandsRepository brandsRepository) : ControllerBase
     {
 
         [HttpGet]

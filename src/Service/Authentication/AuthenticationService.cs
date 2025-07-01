@@ -118,11 +118,6 @@ namespace Service.Authentication
                     new ("role", user.Role.ToString())
                 };
 
-            if (user.Role == Domain.Enums.RoleType.Admin)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, user.Role.ToString()));
-            }
-
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue<string>("AppSettings:Token")!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
@@ -130,7 +125,7 @@ namespace Service.Authentication
             var tokenDescriptor = new JwtSecurityToken(
                 issuer: configuration.GetValue<string>("AppSettings:Issuer"),
                 audience: configuration.GetValue<string>("AppSettings:Audience"),
-                expires: DateTime.Now.AddMinutes(5),
+                expires: DateTime.Now.AddMinutes(60),
                 signingCredentials: creds,
                 claims: claims
             );

@@ -41,7 +41,8 @@ namespace Api
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = builder.Configuration["AppSettings:Issuer"],
                         ValidAudience = builder.Configuration["AppSettings:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!)),
+                        RoleClaimType = "role"
                     };
                 })
                 .AddCookie("Cookies", options =>

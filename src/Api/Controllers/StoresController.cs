@@ -4,6 +4,7 @@ using Domain.Interfaces;
 using Domain.Requests.Stores;
 using Domain.Responses;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -12,7 +13,7 @@ namespace Api.Controllers
     [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
     [Route("api/stores")]
     [ApiController]
-    public class StoreController(IStoreRepository storeRepository, IBrandsRepository brandsRepository) : ControllerBase
+    public class StoresController(IStoreRepository storeRepository, IBrandsRepository brandsRepository) : ControllerBase
     {
 
         [HttpGet]
@@ -23,6 +24,7 @@ namespace Api.Controllers
 
             var response = stores.Select(stores => new StoreResponse
             {
+                Id = stores.Id,
                 Name = stores.Name,
                 Address = stores.Address,
                 Email = stores.Email,
@@ -46,6 +48,7 @@ namespace Api.Controllers
 
             var response = stores.Select(stores => new StoreResponse
             {
+                Id = stores.Id,
                 Name = stores.Name,
                 Address = stores.Address,
                 Email = stores.Email,
@@ -73,6 +76,7 @@ namespace Api.Controllers
 
             var response = new StoreResponse
             {
+                Id = store.Id,
                 Name = store.Name,
                 Address = store.Address,
                 Email = store.Email,
@@ -89,14 +93,14 @@ namespace Api.Controllers
             return Ok(response);
         }
 
-        [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Shopkeeper)}, {nameof(RoleType.Customer)}, {nameof(RoleType.Seller)}")]
+        [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Customer)},{nameof(RoleType.Seller)}")]
         [HttpPost]
         public async Task<ActionResult> AddStore([FromBody] CreateStoreRequest request)
         {
             var guidList = request.Brands.Select(b => Guid.Parse(b)).ToList();
             var brands = await brandsRepository.GetByIdsListAsync(guidList);
 
-            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userIdClaim = User.FindFirst("id")?.Value;
 
             if (!Guid.TryParse(userIdClaim, out Guid userId))
                 return Unauthorized("Usuário inválido.");
@@ -135,10 +139,29 @@ namespace Api.Controllers
                 return NotFound("Store not found.");
             }
 
+            var requestedBrandIds = request.Brands.Select(b => b.Id).ToHashSet();
+
+            var currentBrandIds = store.Brands.Select(b => b.Id).ToList();
+
+            var brandsToRemove = store.Brands.Where(b => !requestedBrandIds.Contains(b.Id)).ToList();
+            foreach (var brand in brandsToRemove)
+            {
+                store.Brands.Remove(brand);
+            }
+
+            var brandIdsToAdd = requestedBrandIds.Except(currentBrandIds).ToList();
+            var brandsToAdd = await brandsRepository.GetByIdsListAsync(brandIdsToAdd);
+            foreach (var brand in brandsToAdd)
+            {
+                store.Brands.Add(brand);
+            }
+
             store.UpdatedAt = DateTime.UtcNow;
             store.Name = request.Name;
             store.Email = request.Email;
+            store.Address = request.Address;
             store.Website = request.Website;
+            store.PaymentConditions = request.PaymentConditions;
 
             var validationResult = new StoreValidator().Validate(store);
             if (request == null || !validationResult.IsValid)
@@ -147,7 +170,7 @@ namespace Api.Controllers
             }
 
             await storeRepository.UpdateStoreAsync(store);
-            return NoContent();
+            return Ok(id);
         }
 
         [HttpDelete("{id}")]

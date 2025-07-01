@@ -114,7 +114,7 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.BrandController",
+    "ContainingType": "Api.Controllers.BrandsController",
     "Method": "GetAllBrands",
     "RelativePath": "api/brands",
     "HttpMethod": "GET",
@@ -134,7 +134,7 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "GetAllStores",
     "RelativePath": "api/stores",
     "HttpMethod": "GET",
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "AddStore",
     "RelativePath": "api/stores",
     "HttpMethod": "POST",
@@ -163,14 +163,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Domain.Requests.Stores.StoreRequest",
+        "Type": "Domain.Requests.Stores.CreateStoreRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "GetStoreById",
     "RelativePath": "api/stores/{id}",
     "HttpMethod": "GET",
@@ -196,7 +196,7 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "UpdateStore",
     "RelativePath": "api/stores/{id}",
     "HttpMethod": "PUT",
@@ -217,7 +217,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "DeleteStore",
     "RelativePath": "api/stores/{id}",
     "HttpMethod": "DELETE",
@@ -233,7 +233,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.StoreController",
+    "ContainingType": "Api.Controllers.StoresController",
     "Method": "SearchStoresByName",
     "RelativePath": "api/stores/search",
     "HttpMethod": "GET",
@@ -259,9 +259,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.UserController",
+    "ContainingType": "Api.Controllers.UsersController",
     "Method": "Update",
-    "RelativePath": "api/User/{id}",
+    "RelativePath": "api/Users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -273,7 +273,7 @@
       },
       {
         "Name": "request",
-        "Type": "Domain.Requests.Stores.UpdateUserRequest",
+        "Type": "Domain.Requests.UpdateUserRequest",
         "IsRequired": true
       }
     ],
