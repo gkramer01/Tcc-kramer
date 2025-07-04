@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController(IUserRepository repository) : ControllerBase
@@ -22,7 +23,7 @@ namespace Api.Controllers
                 return NotFound("User not found.");
             }
 
-            if (userByName is not null)
+            if (userByName is not null && userByName.UserName != user.UserName)
             {
                 return BadRequest("UserName already exists.");
             }

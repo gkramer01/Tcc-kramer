@@ -1,13 +1,11 @@
 ﻿using Domain.Entities;
 using Domain.Enums;
-using Domain.Interfaces;
 using Domain.Requests;
 using Domain.Responses;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using IAuthenticationService = Domain.Interfaces.IAuthenticationService;
 
 namespace Api.Controllers
@@ -44,7 +42,7 @@ namespace Api.Controllers
 
             var tokenResponse = await authenticationService.LoginAsync(request);
 
-            if (tokenResponse is not null || !string.IsNullOrEmpty(tokenResponse?.Token))
+            if (tokenResponse is not null && !string.IsNullOrEmpty(tokenResponse?.Token))
             {
                 return Ok(tokenResponse);
             }
@@ -84,6 +82,21 @@ namespace Api.Controllers
         {
             await HttpContext.SignOutAsync("Cookies");
             return Ok(new { message = "Logout realizado com sucesso." });
+        }
+
+        // Endpoint para debug - verificar se o token está válido
+        [Authorize]
+        [HttpGet("validate-token")]
+        public IActionResult ValidateToken()
+        {
+            var claims = HttpContext.User.Claims.Select(c => new { c.Type, c.Value }).ToList();
+            return Ok(new
+            {
+                Message = "Token is valid",
+                Claims = claims,
+                User = HttpContext.User.Identity?.Name,
+                IsAuthenticated = HttpContext.User.Identity?.IsAuthenticated
+            });
         }
     }
 }

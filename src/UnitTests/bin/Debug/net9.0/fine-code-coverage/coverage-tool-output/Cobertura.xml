@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.374115267947422" branch-rate="0.169642857142857" lines-covered="740" lines-valid="1978" branches-covered="19" branches-valid="112" complexity="298" version="0" timestamp="1750962264">
+<coverage line-rate="0.374431531076301" branch-rate="0.163636363636364" lines-covered="741" lines-valid="1979" branches-covered="18" branches-valid="110" complexity="308" version="0" timestamp="1751401970">
   <sources />
   <packages>
     <package name="Data" line-rate="0.831325301204819" branch-rate="0.833333333333333" complexity="22">
@@ -267,7 +267,7 @@
         </class>
       </classes>
     </package>
-    <package name="Domain" line-rate="0.488636363636364" branch-rate="0.111111111111111" complexity="135">
+    <package name="Domain" line-rate="0.483870967741935" branch-rate="0.111111111111111" complexity="146">
       <classes>
         <class name="Domain.Entities.BaseEntity" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Entities\BaseEntity.cs" line-rate="1" branch-rate="1" complexity="13">
           <methods>
@@ -850,82 +850,121 @@
             <line number="34" hits="1" branch="false" />
           </lines>
         </class>
-        <class name="Domain.Requests.Stores.UpdateStoreRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\Stores\UpdateStoreRequest.cs" line-rate="1" branch-rate="1" complexity="6">
+        <class name="Domain.Requests.Stores.UpdateStoreRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\Stores\UpdateStoreRequest.cs" line-rate="0.833333333333333" branch-rate="1" complexity="13">
           <methods>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="1" branch="false" />
+                <line number="8" hits="1" branch="false" />
               </lines>
             </method>
             <method name="set_Name" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="1" branch="false" />
+                <line number="8" hits="1" branch="false" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="1" branch="false" />
+                <line number="9" hits="1" branch="false" />
               </lines>
             </method>
             <method name="set_Email" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="1" branch="false" />
+                <line number="9" hits="1" branch="false" />
               </lines>
             </method>
             <method name="get_Website" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
               </lines>
             </method>
             <method name="set_Website" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Address" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="set_Address" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Brands" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="set_Brands" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="get_PaymentConditions" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="set_PaymentConditions" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="1" branch="false" />
-            <line number="6" hits="1" branch="false" />
-            <line number="7" hits="1" branch="false" />
+            <line number="8" hits="1" branch="false" />
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="0" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
           </lines>
         </class>
         <class name="Domain.Requests.UpdateUserRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\UpdateUserRequest.cs" line-rate="0" branch-rate="1" complexity="6">
           <methods>
             <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Name" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="false" />
+                <line number="11" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Email" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="false" />
+                <line number="11" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_UserName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_UserName" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="false" />
-            <line number="6" hits="0" branch="false" />
-            <line number="7" hits="0" branch="false" />
+            <line number="8" hits="0" branch="false" />
+            <line number="11" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Domain.Responses.BrandResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\BrandResponse.cs" line-rate="0" branch-rate="1" complexity="5">
@@ -983,92 +1022,115 @@
             <line number="5" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Domain.Responses.StoreResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\StoreResponse.cs" line-rate="0" branch-rate="1" complexity="15">
+        <class name="Domain.Responses.StoreResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\StoreResponse.cs" line-rate="0" branch-rate="1" complexity="19">
           <methods>
+            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="set_Id" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="false" />
+              </lines>
+            </method>
             <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Name" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Address" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="false" />
+                <line number="9" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Address" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="false" />
+                <line number="9" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="false" />
+                <line number="10" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Email" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="false" />
+                <line number="10" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Website" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="8" hits="0" branch="false" />
+                <line number="11" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Website" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="8" hits="0" branch="false" />
+                <line number="11" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Latitude" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="0" branch="false" />
+                <line number="12" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Latitude" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="0" branch="false" />
+                <line number="12" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Longitude" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Longitude" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Brands" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
               </lines>
             </method>
             <method name="set_Brands" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="get_PaymentConditions" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="set_PaymentConditions" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="false" />
-            <line number="6" hits="0" branch="false" />
             <line number="7" hits="0" branch="false" />
             <line number="8" hits="0" branch="false" />
             <line number="9" hits="0" branch="false" />
             <line number="10" hits="0" branch="false" />
             <line number="11" hits="0" branch="false" />
+            <line number="12" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Domain.Responses.TokenResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\TokenResponse.cs" line-rate="1" branch-rate="1" complexity="4">
@@ -3767,16 +3829,16 @@
         </class>
       </classes>
     </package>
-    <package name="Service" line-rate="0.519607843137255" branch-rate="0.25" complexity="24">
+    <package name="Service" line-rate="0.530612244897959" branch-rate="0.222222222222222" complexity="23">
       <classes>
-        <class name="Service.Authentication.AuthenticationService" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs" line-rate="0.519607843137255" branch-rate="0.25" complexity="24">
+        <class name="Service.Authentication.AuthenticationService" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs" line-rate="0.530612244897959" branch-rate="0.222222222222222" complexity="23">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="16" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="CreateToken" signature="(...)" line-rate="0.875" branch-rate="0.5" complexity="2">
+            <method name="CreateToken" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="111" hits="1" branch="false" />
                 <line number="112" hits="1" branch="false" />
@@ -3787,31 +3849,27 @@
                 <line number="117" hits="1" branch="false" />
                 <line number="118" hits="1" branch="false" />
                 <line number="119" hits="1" branch="false" />
-                <line number="121" hits="1" branch="true" condition-coverage="50% (1/2)" />
-                <line number="122" hits="0" branch="false" />
-                <line number="123" hits="0" branch="false" />
-                <line number="124" hits="0" branch="false" />
+                <line number="121" hits="1" branch="false" />
+                <line number="123" hits="1" branch="false" />
+                <line number="125" hits="1" branch="false" />
                 <line number="126" hits="1" branch="false" />
+                <line number="127" hits="1" branch="false" />
                 <line number="128" hits="1" branch="false" />
+                <line number="129" hits="1" branch="false" />
                 <line number="130" hits="1" branch="false" />
                 <line number="131" hits="1" branch="false" />
-                <line number="132" hits="1" branch="false" />
                 <line number="133" hits="1" branch="false" />
                 <line number="134" hits="1" branch="false" />
-                <line number="135" hits="1" branch="false" />
-                <line number="136" hits="1" branch="false" />
-                <line number="138" hits="1" branch="false" />
-                <line number="139" hits="1" branch="false" />
               </lines>
             </method>
             <method name="GenerateRefreshToken" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="137" hits="1" branch="false" />
+                <line number="138" hits="1" branch="false" />
+                <line number="139" hits="1" branch="false" />
+                <line number="140" hits="1" branch="false" />
+                <line number="141" hits="1" branch="false" />
                 <line number="142" hits="1" branch="false" />
-                <line number="143" hits="1" branch="false" />
-                <line number="144" hits="1" branch="false" />
-                <line number="145" hits="1" branch="false" />
-                <line number="146" hits="1" branch="false" />
-                <line number="147" hits="1" branch="false" />
               </lines>
             </method>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -3827,13 +3885,13 @@
             </method>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="145" hits="1" branch="false" />
+                <line number="146" hits="1" branch="false" />
+                <line number="147" hits="1" branch="false" />
+                <line number="148" hits="1" branch="false" />
+                <line number="149" hits="1" branch="false" />
                 <line number="150" hits="1" branch="false" />
                 <line number="151" hits="1" branch="false" />
-                <line number="152" hits="1" branch="false" />
-                <line number="153" hits="1" branch="false" />
-                <line number="154" hits="1" branch="false" />
-                <line number="155" hits="1" branch="false" />
-                <line number="156" hits="1" branch="false" />
               </lines>
             </method>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
@@ -3989,34 +4047,30 @@
             <line number="117" hits="1" branch="false" />
             <line number="118" hits="1" branch="false" />
             <line number="119" hits="1" branch="false" />
-            <line number="121" hits="1" branch="true" condition-coverage="50% (1/2)" />
-            <line number="122" hits="0" branch="false" />
-            <line number="123" hits="0" branch="false" />
-            <line number="124" hits="0" branch="false" />
+            <line number="121" hits="1" branch="false" />
+            <line number="123" hits="1" branch="false" />
+            <line number="125" hits="1" branch="false" />
             <line number="126" hits="1" branch="false" />
+            <line number="127" hits="1" branch="false" />
             <line number="128" hits="1" branch="false" />
+            <line number="129" hits="1" branch="false" />
             <line number="130" hits="1" branch="false" />
             <line number="131" hits="1" branch="false" />
-            <line number="132" hits="1" branch="false" />
             <line number="133" hits="1" branch="false" />
             <line number="134" hits="1" branch="false" />
-            <line number="135" hits="1" branch="false" />
-            <line number="136" hits="1" branch="false" />
+            <line number="137" hits="1" branch="false" />
             <line number="138" hits="1" branch="false" />
             <line number="139" hits="1" branch="false" />
+            <line number="140" hits="1" branch="false" />
+            <line number="141" hits="1" branch="false" />
             <line number="142" hits="1" branch="false" />
-            <line number="143" hits="1" branch="false" />
-            <line number="144" hits="1" branch="false" />
             <line number="145" hits="1" branch="false" />
             <line number="146" hits="1" branch="false" />
             <line number="147" hits="1" branch="false" />
+            <line number="148" hits="1" branch="false" />
+            <line number="149" hits="1" branch="false" />
             <line number="150" hits="1" branch="false" />
             <line number="151" hits="1" branch="false" />
-            <line number="152" hits="1" branch="false" />
-            <line number="153" hits="1" branch="false" />
-            <line number="154" hits="1" branch="false" />
-            <line number="155" hits="1" branch="false" />
-            <line number="156" hits="1" branch="false" />
           </lines>
         </class>
       </classes>
@@ -5090,11 +5144,11 @@
                 <line number="98" hits="1" branch="false" />
                 <line number="100" hits="1" branch="false" />
                 <line number="101" hits="1" branch="false" />
-                <line number="114" hits="1" branch="false" />
-                <line number="117" hits="1" branch="false" />
-                <line number="118" hits="1" branch="false" />
-                <line number="119" hits="1" branch="false" />
-                <line number="120" hits="1" branch="false" />
+                <line number="104" hits="1" branch="false" />
+                <line number="107" hits="1" branch="false" />
+                <line number="108" hits="1" branch="false" />
+                <line number="109" hits="1" branch="false" />
+                <line number="110" hits="1" branch="false" />
               </lines>
             </method>
           </methods>
@@ -5156,11 +5210,11 @@
             <line number="98" hits="1" branch="false" />
             <line number="100" hits="1" branch="false" />
             <line number="101" hits="1" branch="false" />
-            <line number="114" hits="1" branch="false" />
-            <line number="117" hits="1" branch="false" />
-            <line number="118" hits="1" branch="false" />
-            <line number="119" hits="1" branch="false" />
-            <line number="120" hits="1" branch="false" />
+            <line number="104" hits="1" branch="false" />
+            <line number="107" hits="1" branch="false" />
+            <line number="108" hits="1" branch="false" />
+            <line number="109" hits="1" branch="false" />
+            <line number="110" hits="1" branch="false" />
           </lines>
         </class>
       </classes>

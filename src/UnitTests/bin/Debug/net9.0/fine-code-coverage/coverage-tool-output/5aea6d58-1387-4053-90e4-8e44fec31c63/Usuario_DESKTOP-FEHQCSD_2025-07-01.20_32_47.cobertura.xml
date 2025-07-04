@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<coverage line-rate="0.38401559454191031" branch-rate="0.16964285714285715" complexity="334" version="1.9" timestamp="1750973062" lines-covered="788" lines-valid="2052" branches-covered="19" branches-valid="112">
+<coverage line-rate="0.38282387190684136" branch-rate="0.16363636363636364" complexity="344" version="1.9" timestamp="1751412767" lines-covered="789" lines-valid="2061" branches-covered="18" branches-valid="110">
   <packages>
     <package line-rate="1" branch-rate="0.5" complexity="36" name="UnitTests">
       <classes>
@@ -543,11 +543,11 @@
                 <line number="98" hits="1" branch="False" />
                 <line number="100" hits="1" branch="False" />
                 <line number="101" hits="1" branch="False" />
-                <line number="114" hits="1" branch="False" />
-                <line number="117" hits="1" branch="False" />
-                <line number="118" hits="1" branch="False" />
-                <line number="119" hits="1" branch="False" />
-                <line number="120" hits="1" branch="False" />
+                <line number="104" hits="1" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+                <line number="109" hits="1" branch="False" />
+                <line number="110" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -572,11 +572,11 @@
             <line number="98" hits="1" branch="False" />
             <line number="100" hits="1" branch="False" />
             <line number="101" hits="1" branch="False" />
-            <line number="114" hits="1" branch="False" />
-            <line number="117" hits="1" branch="False" />
-            <line number="118" hits="1" branch="False" />
-            <line number="119" hits="1" branch="False" />
-            <line number="120" hits="1" branch="False" />
+            <line number="104" hits="1" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+            <line number="109" hits="1" branch="False" />
+            <line number="110" hits="1" branch="False" />
           </lines>
         </class>
         <class line-rate="1" branch-rate="1" complexity="1" name="UnitTests.Data.Repositories.BrandsRepositoryTests.&lt;GetAllBrandsAsync_ShouldReturnAllBrands&gt;d__4" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\UnitTests\Data\Repositories\BrandsRepositoryTests.cs">
@@ -1267,7 +1267,7 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0.56172839506172845" branch-rate="0.1111111111111111" complexity="138" name="Domain">
+    <package line-rate="0.53142857142857147" branch-rate="0.1111111111111111" complexity="149" name="Domain">
       <classes>
         <class line-rate="0" branch-rate="1" complexity="5" name="Domain.Responses.BrandResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\BrandResponse.cs">
           <methods>
@@ -1324,92 +1324,115 @@
             <line number="5" hits="0" branch="False" />
           </lines>
         </class>
-        <class line-rate="0" branch-rate="1" complexity="15" name="Domain.Responses.StoreResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\StoreResponse.cs">
+        <class line-rate="0" branch-rate="1" complexity="19" name="Domain.Responses.StoreResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\StoreResponse.cs">
           <methods>
+            <method line-rate="0" branch-rate="1" complexity="1" name="get_Id" signature="()">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="set_Id" signature="(System.Guid)">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Name" signature="()">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="8" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Name" signature="(string)">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="8" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Address" signature="()">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Address" signature="(string)">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Email" signature="()">
               <lines>
-                <line number="7" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Email" signature="(string)">
               <lines>
-                <line number="7" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Website" signature="()">
               <lines>
-                <line number="8" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Website" signature="(string)">
               <lines>
-                <line number="8" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Latitude" signature="()">
               <lines>
-                <line number="9" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Latitude" signature="(double)">
               <lines>
-                <line number="9" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Longitude" signature="()">
               <lines>
-                <line number="10" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Longitude" signature="(double)">
               <lines>
-                <line number="10" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Brands" signature="()">
               <lines>
-                <line number="11" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Brands" signature="(System.Collections.Generic.List&lt;Domain.Responses.BrandResponse&gt;)">
               <lines>
-                <line number="11" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="get_PaymentConditions" signature="()">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="set_PaymentConditions" signature="(System.Collections.Generic.List&lt;Domain.Enums.PaymentConditions&gt;)">
+              <lines>
+                <line number="15" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name=".ctor" signature="()">
               <lines>
-                <line number="11" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="False" />
-            <line number="6" hits="0" branch="False" />
             <line number="7" hits="0" branch="False" />
             <line number="8" hits="0" branch="False" />
             <line number="9" hits="0" branch="False" />
             <line number="10" hits="0" branch="False" />
             <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
           </lines>
         </class>
         <class line-rate="1" branch-rate="1" complexity="4" name="Domain.Responses.TokenResponse" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Responses\TokenResponse.cs">
@@ -1523,39 +1546,39 @@
           <methods>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Name" signature="()">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="8" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Name" signature="(string)">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="8" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_Email" signature="()">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_Email" signature="(string)">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="get_UserName" signature="()">
               <lines>
-                <line number="7" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
               </lines>
             </method>
             <method line-rate="0" branch-rate="1" complexity="1" name="set_UserName" signature="(string)">
               <lines>
-                <line number="7" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="False" />
-            <line number="6" hits="0" branch="False" />
-            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
           </lines>
         </class>
         <class line-rate="1" branch-rate="1" complexity="17" name="Domain.Requests.Stores.CreateStoreRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\Stores\CreateStoreRequest.cs">
@@ -1657,43 +1680,82 @@
             <line number="34" hits="1" branch="False" />
           </lines>
         </class>
-        <class line-rate="1" branch-rate="1" complexity="6" name="Domain.Requests.Stores.UpdateStoreRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\Stores\UpdateStoreRequest.cs">
+        <class line-rate="0.5714285714285714" branch-rate="1" complexity="13" name="Domain.Requests.Stores.UpdateStoreRequest" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Requests\Stores\UpdateStoreRequest.cs">
           <methods>
             <method line-rate="1" branch-rate="1" complexity="1" name="get_Name" signature="()">
               <lines>
-                <line number="5" hits="1" branch="False" />
+                <line number="8" hits="1" branch="False" />
               </lines>
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="set_Name" signature="(string)">
               <lines>
-                <line number="5" hits="1" branch="False" />
+                <line number="8" hits="1" branch="False" />
               </lines>
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="get_Email" signature="()">
               <lines>
-                <line number="6" hits="1" branch="False" />
+                <line number="9" hits="1" branch="False" />
               </lines>
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="set_Email" signature="(string)">
               <lines>
-                <line number="6" hits="1" branch="False" />
+                <line number="9" hits="1" branch="False" />
               </lines>
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="get_Website" signature="()">
               <lines>
-                <line number="7" hits="1" branch="False" />
+                <line number="10" hits="1" branch="False" />
               </lines>
             </method>
             <method line-rate="1" branch-rate="1" complexity="1" name="set_Website" signature="(string)">
               <lines>
-                <line number="7" hits="1" branch="False" />
+                <line number="10" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="get_Address" signature="()">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="set_Address" signature="(string)">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="get_Brands" signature="()">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="set_Brands" signature="(System.Collections.Generic.List&lt;Domain.Entities.Brand&gt;)">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="get_PaymentConditions" signature="()">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="0" branch-rate="1" complexity="1" name="set_PaymentConditions" signature="(System.Collections.Generic.List&lt;Domain.Enums.PaymentConditions&gt;)">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="1" branch-rate="1" complexity="1" name=".ctor" signature="()">
+              <lines>
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="1" branch="False" />
-            <line number="6" hits="1" branch="False" />
-            <line number="7" hits="1" branch="False" />
+            <line number="8" hits="1" branch="False" />
+            <line number="9" hits="1" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
           </lines>
         </class>
         <class line-rate="0" branch-rate="0" complexity="8" name="Domain.Extensions.FlexibleUrlAttribute" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Domain\Extensions\FlexibleUrlAttributeExtension.cs">
@@ -5259,364 +5321,6 @@
         </class>
       </classes>
     </package>
-    <package line-rate="0.51960784313725494" branch-rate="0.25" complexity="24" name="Service">
-      <classes>
-        <class line-rate="0.90322580645161288" branch-rate="0.5" complexity="4" name="Service.Authentication.AuthenticationService" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="1" branch-rate="1" complexity="1" name=".ctor" signature="(Domain.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)">
-              <lines>
-                <line number="16" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="0.875" branch-rate="0.5" complexity="2" name="CreateToken" signature="(Domain.Entities.User)">
-              <lines>
-                <line number="111" hits="1" branch="False" />
-                <line number="112" hits="1" branch="False" />
-                <line number="113" hits="1" branch="False" />
-                <line number="114" hits="1" branch="False" />
-                <line number="115" hits="1" branch="False" />
-                <line number="116" hits="1" branch="False" />
-                <line number="117" hits="1" branch="False" />
-                <line number="118" hits="1" branch="False" />
-                <line number="119" hits="1" branch="False" />
-                <line number="121" hits="1" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="122" hits="0" branch="False" />
-                <line number="123" hits="0" branch="False" />
-                <line number="124" hits="0" branch="False" />
-                <line number="126" hits="1" branch="False" />
-                <line number="128" hits="1" branch="False" />
-                <line number="130" hits="1" branch="False" />
-                <line number="131" hits="1" branch="False" />
-                <line number="132" hits="1" branch="False" />
-                <line number="133" hits="1" branch="False" />
-                <line number="134" hits="1" branch="False" />
-                <line number="135" hits="1" branch="False" />
-                <line number="136" hits="1" branch="False" />
-                <line number="138" hits="1" branch="False" />
-                <line number="139" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method line-rate="1" branch-rate="1" complexity="1" name="GenerateRefreshToken" signature="()">
-              <lines>
-                <line number="142" hits="1" branch="False" />
-                <line number="143" hits="1" branch="False" />
-                <line number="144" hits="1" branch="False" />
-                <line number="145" hits="1" branch="False" />
-                <line number="146" hits="1" branch="False" />
-                <line number="147" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="16" hits="1" branch="False" />
-            <line number="111" hits="1" branch="False" />
-            <line number="112" hits="1" branch="False" />
-            <line number="113" hits="1" branch="False" />
-            <line number="114" hits="1" branch="False" />
-            <line number="115" hits="1" branch="False" />
-            <line number="116" hits="1" branch="False" />
-            <line number="117" hits="1" branch="False" />
-            <line number="118" hits="1" branch="False" />
-            <line number="119" hits="1" branch="False" />
-            <line number="121" hits="1" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="122" hits="0" branch="False" />
-            <line number="123" hits="0" branch="False" />
-            <line number="124" hits="0" branch="False" />
-            <line number="126" hits="1" branch="False" />
-            <line number="128" hits="1" branch="False" />
-            <line number="130" hits="1" branch="False" />
-            <line number="131" hits="1" branch="False" />
-            <line number="132" hits="1" branch="False" />
-            <line number="133" hits="1" branch="False" />
-            <line number="134" hits="1" branch="False" />
-            <line number="135" hits="1" branch="False" />
-            <line number="136" hits="1" branch="False" />
-            <line number="138" hits="1" branch="False" />
-            <line number="139" hits="1" branch="False" />
-            <line number="142" hits="1" branch="False" />
-            <line number="143" hits="1" branch="False" />
-            <line number="144" hits="1" branch="False" />
-            <line number="145" hits="1" branch="False" />
-            <line number="146" hits="1" branch="False" />
-            <line number="147" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="1" branch-rate="1" complexity="1" name="Service.Authentication.AuthenticationService.&lt;CreateTokenResponseAsync&gt;d__7" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
-              <lines>
-                <line number="91" hits="1" branch="False" />
-                <line number="92" hits="1" branch="False" />
-                <line number="93" hits="1" branch="False" />
-                <line number="94" hits="1" branch="False" />
-                <line number="95" hits="1" branch="False" />
-                <line number="96" hits="1" branch="False" />
-                <line number="97" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="91" hits="1" branch="False" />
-            <line number="92" hits="1" branch="False" />
-            <line number="93" hits="1" branch="False" />
-            <line number="94" hits="1" branch="False" />
-            <line number="95" hits="1" branch="False" />
-            <line number="96" hits="1" branch="False" />
-            <line number="97" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="1" branch-rate="1" complexity="1" name="Service.Authentication.AuthenticationService.&lt;GenerateAndSaveRefreshTokenAsync&gt;d__11" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
-              <lines>
-                <line number="150" hits="1" branch="False" />
-                <line number="151" hits="1" branch="False" />
-                <line number="152" hits="1" branch="False" />
-                <line number="153" hits="1" branch="False" />
-                <line number="154" hits="1" branch="False" />
-                <line number="155" hits="1" branch="False" />
-                <line number="156" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="150" hits="1" branch="False" />
-            <line number="151" hits="1" branch="False" />
-            <line number="152" hits="1" branch="False" />
-            <line number="153" hits="1" branch="False" />
-            <line number="154" hits="1" branch="False" />
-            <line number="155" hits="1" branch="False" />
-            <line number="156" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;GoogleLoginAsync&gt;d__4" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="37" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="40" hits="0" branch="False" />
-                <line number="41" hits="0" branch="False" />
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="45" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-                <line number="50" hits="0" branch="False" />
-                <line number="52" hits="0" branch="False" />
-                <line number="53" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="37" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="40" hits="0" branch="False" />
-            <line number="41" hits="0" branch="False" />
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="45" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="50" hits="0" branch="False" />
-            <line number="52" hits="0" branch="False" />
-            <line number="53" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="1" branch-rate="1" complexity="4" name="Service.Authentication.AuthenticationService.&lt;LoginAsync&gt;d__3" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="1" branch-rate="1" complexity="4" name="MoveNext" signature="()">
-              <lines>
-                <line number="19" hits="1" branch="False" />
-                <line number="20" hits="1" branch="False" />
-                <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
-                <line number="23" hits="1" branch="False" />
-                <line number="24" hits="1" branch="False" />
-                <line number="27" hits="1" branch="False" />
-                <line number="29" hits="1" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
-                <line number="30" hits="1" branch="False" />
-                <line number="31" hits="1" branch="False" />
-                <line number="33" hits="1" branch="False" />
-                <line number="34" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="19" hits="1" branch="False" />
-            <line number="20" hits="1" branch="False" />
-            <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="100%" />
-              </conditions>
-            </line>
-            <line number="23" hits="1" branch="False" />
-            <line number="24" hits="1" branch="False" />
-            <line number="27" hits="1" branch="False" />
-            <line number="29" hits="1" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="100%" />
-              </conditions>
-            </line>
-            <line number="30" hits="1" branch="False" />
-            <line number="31" hits="1" branch="False" />
-            <line number="33" hits="1" branch="False" />
-            <line number="34" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;RefreshTokensAsync&gt;d__6" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="79" hits="0" branch="False" />
-                <line number="80" hits="0" branch="False" />
-                <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="83" hits="0" branch="False" />
-                <line number="84" hits="0" branch="False" />
-                <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="79" hits="0" branch="False" />
-            <line number="80" hits="0" branch="False" />
-            <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="83" hits="0" branch="False" />
-            <line number="84" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;RegisterAsync&gt;d__5" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
-              <lines>
-                <line number="56" hits="0" branch="False" />
-                <line number="57" hits="0" branch="False" />
-                <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="60" hits="0" branch="False" />
-                <line number="62" hits="0" branch="False" />
-                <line number="63" hits="0" branch="False" />
-                <line number="64" hits="0" branch="False" />
-                <line number="65" hits="0" branch="False" />
-                <line number="66" hits="0" branch="False" />
-                <line number="67" hits="0" branch="False" />
-                <line number="68" hits="0" branch="False" />
-                <line number="69" hits="0" branch="False" />
-                <line number="71" hits="0" branch="False" />
-                <line number="73" hits="0" branch="False" />
-                <line number="75" hits="0" branch="False" />
-                <line number="76" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="56" hits="0" branch="False" />
-            <line number="57" hits="0" branch="False" />
-            <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="0" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="60" hits="0" branch="False" />
-            <line number="62" hits="0" branch="False" />
-            <line number="63" hits="0" branch="False" />
-            <line number="64" hits="0" branch="False" />
-            <line number="65" hits="0" branch="False" />
-            <line number="66" hits="0" branch="False" />
-            <line number="67" hits="0" branch="False" />
-            <line number="68" hits="0" branch="False" />
-            <line number="69" hits="0" branch="False" />
-            <line number="71" hits="0" branch="False" />
-            <line number="73" hits="0" branch="False" />
-            <line number="75" hits="0" branch="False" />
-            <line number="76" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class line-rate="0" branch-rate="0" complexity="8" name="Service.Authentication.AuthenticationService.&lt;ValidateRefreshToken&gt;d__8" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
-          <methods>
-            <method line-rate="0" branch-rate="0" complexity="8" name="MoveNext" signature="()">
-              <lines>
-                <line number="100" hits="0" branch="False" />
-                <line number="101" hits="0" branch="False" />
-                <line number="103" hits="0" branch="True" condition-coverage="0% (0/8)">
-                  <conditions>
-                    <condition number="0" type="jump" coverage="0%" />
-                    <condition number="1" type="jump" coverage="0%" />
-                    <condition number="2" type="jump" coverage="0%" />
-                    <condition number="3" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="104" hits="0" branch="False" />
-                <line number="105" hits="0" branch="False" />
-                <line number="107" hits="0" branch="False" />
-                <line number="108" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="100" hits="0" branch="False" />
-            <line number="101" hits="0" branch="False" />
-            <line number="103" hits="0" branch="True" condition-coverage="0% (0/8)">
-              <conditions>
-                <condition number="0" type="jump" coverage="0%" />
-                <condition number="1" type="jump" coverage="0%" />
-                <condition number="2" type="jump" coverage="0%" />
-                <condition number="3" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="104" hits="0" branch="False" />
-            <line number="105" hits="0" branch="False" />
-            <line number="107" hits="0" branch="False" />
-            <line number="108" hits="0" branch="False" />
-          </lines>
-        </class>
-      </classes>
-    </package>
     <package line-rate="0.83132530120481929" branch-rate="0.83333333333333337" complexity="22" name="Data">
       <classes>
         <class line-rate="1" branch-rate="1" complexity="1" name="Data.Repositories.BrandsRepository" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Data\Repositories\BrandsRepository.cs">
@@ -5985,6 +5689,348 @@
             <line number="39" hits="1" branch="False" />
             <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package line-rate="0.53061224489795922" branch-rate="0.22222222222222221" complexity="23" name="Service">
+      <classes>
+        <class line-rate="1" branch-rate="1" complexity="3" name="Service.Authentication.AuthenticationService" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="1" branch-rate="1" complexity="1" name=".ctor" signature="(Domain.Interfaces.IUserRepository, Microsoft.Extensions.Configuration.IConfiguration)">
+              <lines>
+                <line number="16" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="1" branch-rate="1" complexity="1" name="CreateToken" signature="(Domain.Entities.User)">
+              <lines>
+                <line number="111" hits="1" branch="False" />
+                <line number="112" hits="1" branch="False" />
+                <line number="113" hits="1" branch="False" />
+                <line number="114" hits="1" branch="False" />
+                <line number="115" hits="1" branch="False" />
+                <line number="116" hits="1" branch="False" />
+                <line number="117" hits="1" branch="False" />
+                <line number="118" hits="1" branch="False" />
+                <line number="119" hits="1" branch="False" />
+                <line number="121" hits="1" branch="False" />
+                <line number="123" hits="1" branch="False" />
+                <line number="125" hits="1" branch="False" />
+                <line number="126" hits="1" branch="False" />
+                <line number="127" hits="1" branch="False" />
+                <line number="128" hits="1" branch="False" />
+                <line number="129" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="131" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
+                <line number="134" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method line-rate="1" branch-rate="1" complexity="1" name="GenerateRefreshToken" signature="()">
+              <lines>
+                <line number="137" hits="1" branch="False" />
+                <line number="138" hits="1" branch="False" />
+                <line number="139" hits="1" branch="False" />
+                <line number="140" hits="1" branch="False" />
+                <line number="141" hits="1" branch="False" />
+                <line number="142" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="1" branch="False" />
+            <line number="111" hits="1" branch="False" />
+            <line number="112" hits="1" branch="False" />
+            <line number="113" hits="1" branch="False" />
+            <line number="114" hits="1" branch="False" />
+            <line number="115" hits="1" branch="False" />
+            <line number="116" hits="1" branch="False" />
+            <line number="117" hits="1" branch="False" />
+            <line number="118" hits="1" branch="False" />
+            <line number="119" hits="1" branch="False" />
+            <line number="121" hits="1" branch="False" />
+            <line number="123" hits="1" branch="False" />
+            <line number="125" hits="1" branch="False" />
+            <line number="126" hits="1" branch="False" />
+            <line number="127" hits="1" branch="False" />
+            <line number="128" hits="1" branch="False" />
+            <line number="129" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="131" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
+            <line number="134" hits="1" branch="False" />
+            <line number="137" hits="1" branch="False" />
+            <line number="138" hits="1" branch="False" />
+            <line number="139" hits="1" branch="False" />
+            <line number="140" hits="1" branch="False" />
+            <line number="141" hits="1" branch="False" />
+            <line number="142" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="1" branch-rate="1" complexity="1" name="Service.Authentication.AuthenticationService.&lt;CreateTokenResponseAsync&gt;d__7" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
+              <lines>
+                <line number="91" hits="1" branch="False" />
+                <line number="92" hits="1" branch="False" />
+                <line number="93" hits="1" branch="False" />
+                <line number="94" hits="1" branch="False" />
+                <line number="95" hits="1" branch="False" />
+                <line number="96" hits="1" branch="False" />
+                <line number="97" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="91" hits="1" branch="False" />
+            <line number="92" hits="1" branch="False" />
+            <line number="93" hits="1" branch="False" />
+            <line number="94" hits="1" branch="False" />
+            <line number="95" hits="1" branch="False" />
+            <line number="96" hits="1" branch="False" />
+            <line number="97" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="1" branch-rate="1" complexity="1" name="Service.Authentication.AuthenticationService.&lt;GenerateAndSaveRefreshTokenAsync&gt;d__11" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="1" branch-rate="1" complexity="1" name="MoveNext" signature="()">
+              <lines>
+                <line number="145" hits="1" branch="False" />
+                <line number="146" hits="1" branch="False" />
+                <line number="147" hits="1" branch="False" />
+                <line number="148" hits="1" branch="False" />
+                <line number="149" hits="1" branch="False" />
+                <line number="150" hits="1" branch="False" />
+                <line number="151" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="145" hits="1" branch="False" />
+            <line number="146" hits="1" branch="False" />
+            <line number="147" hits="1" branch="False" />
+            <line number="148" hits="1" branch="False" />
+            <line number="149" hits="1" branch="False" />
+            <line number="150" hits="1" branch="False" />
+            <line number="151" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;GoogleLoginAsync&gt;d__4" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+                <line number="53" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="1" branch-rate="1" complexity="4" name="Service.Authentication.AuthenticationService.&lt;LoginAsync&gt;d__3" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="1" branch-rate="1" complexity="4" name="MoveNext" signature="()">
+              <lines>
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="29" hits="1" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="22" hits="1" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="29" hits="1" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;RefreshTokensAsync&gt;d__6" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="83" hits="0" branch="False" />
+                <line number="84" hits="0" branch="False" />
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="83" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="2" name="Service.Authentication.AuthenticationService.&lt;RegisterAsync&gt;d__5" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="2" name="MoveNext" signature="()">
+              <lines>
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="60" hits="0" branch="False" />
+                <line number="62" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="75" hits="0" branch="False" />
+                <line number="76" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="60" hits="0" branch="False" />
+            <line number="62" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="75" hits="0" branch="False" />
+            <line number="76" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class line-rate="0" branch-rate="0" complexity="8" name="Service.Authentication.AuthenticationService.&lt;ValidateRefreshToken&gt;d__8" filename="C:\Users\Usuario\Documents\Projects\TCC\Backend-v2\Backend-TCC\src\Service\Authentication\AuthenticationService.cs">
+          <methods>
+            <method line-rate="0" branch-rate="0" complexity="8" name="MoveNext" signature="()">
+              <lines>
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
+                <line number="103" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%" />
+                    <condition number="1" type="jump" coverage="0%" />
+                    <condition number="2" type="jump" coverage="0%" />
+                    <condition number="3" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="107" hits="0" branch="False" />
+                <line number="108" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="False" />
+            <line number="103" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%" />
+                <condition number="1" type="jump" coverage="0%" />
+                <condition number="2" type="jump" coverage="0%" />
+                <condition number="3" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+            <line number="108" hits="0" branch="False" />
           </lines>
         </class>
       </classes>

@@ -114,6 +114,16 @@
     ]
   },
   {
+    "ContainingType": "Api.Controllers.AuthenticationController",
+    "Method": "ValidateToken",
+    "RelativePath": "api/Authentication/validate-token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Api.Controllers.BrandsController",
     "Method": "GetAllBrands",
     "RelativePath": "api/brands",

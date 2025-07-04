@@ -61,7 +61,7 @@ namespace Data.Repositories
         {
             return await context.Stores
                 .Include(s => s.Brands)
-                .Where(s => s.IsDeleted == false && s.Name.Contains(storeName))
+                .Where(s => s.IsDeleted == false && s.Name.ToLower().Contains(storeName.ToLower()))
                 .OrderBy(s => s.Name)
                 .Take(10)
                 .ToListAsync();

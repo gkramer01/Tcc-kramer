@@ -9,5 +9,4 @@
         public DateTime? DeletedAt { get; set; } = null;
         public bool? IsDeleted { get; set; } = false;
     }
-    // Ajustar store repository pra usar o createdby pra só poder editar/deletar o dono do store
 }

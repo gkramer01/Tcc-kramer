@@ -4,13 +4,11 @@ using Domain.Interfaces;
 using Domain.Requests.Stores;
 using Domain.Responses;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace Api.Controllers
 {
-    [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Customer)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Seller)}")]
+    [Authorize]
     [Route("api/stores")]
     [ApiController]
     public class StoresController(IStoreRepository storeRepository, IBrandsRepository brandsRepository) : ControllerBase
@@ -35,12 +33,18 @@ namespace Api.Controllers
                 {
                     Id = b.Id,
                     Name = b.Name
-                })]
+                })],
+                PaymentConditions = stores.PaymentConditions
             }).ToList();
 
             return Ok(response);
         }
 
+        /// <summary>
+        /// Search stores by its names
+        /// </summary>
+        /// <param name="storeName"></param>
+        /// <returns>Returns a list of the stores that matches the given name</returns>
         [HttpGet("search")]
         public async Task<ActionResult<List<StoreResponse>>> SearchStoresByName([FromQuery] string storeName)
         {
@@ -93,7 +97,6 @@ namespace Api.Controllers
             return Ok(response);
         }
 
-        [Authorize(Roles = $"{nameof(RoleType.Admin)},{nameof(RoleType.Shopkeeper)},{nameof(RoleType.Customer)},{nameof(RoleType.Seller)}")]
         [HttpPost]
         public async Task<ActionResult> AddStore([FromBody] CreateStoreRequest request)
         {

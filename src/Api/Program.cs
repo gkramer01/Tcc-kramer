@@ -8,6 +8,7 @@ using Scalar.AspNetCore;
 using Service.Authentication;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 
 namespace Api
 {
@@ -17,16 +18,22 @@ namespace Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Configuração de CORS mais permissiva para debug
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowFrontend",
-                    policy =>
-                    {
-                        policy.WithOrigins("http://localhost:3000")
-                              .AllowAnyHeader()
-                              .AllowAnyMethod()
-                              .AllowCredentials();
-                    });
+                options.AddPolicy("AllowFrontend", policy =>
+                {
+                    policy.WithOrigins([
+                        "http://localhost:3000",
+                        "http://192.168.1.4:3000",
+                        "https://localhost:7240",
+                        "http://localhost:3001", // Adicione outras portas se necessário
+                        "https://localhost:3000"
+                    ])
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+                });
             });
 
             // JWT Authentication
@@ -42,13 +49,34 @@ namespace Api
                         ValidIssuer = builder.Configuration["AppSettings:Issuer"],
                         ValidAudience = builder.Configuration["AppSettings:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!)),
-                        RoleClaimType = "role"
+                        RoleClaimType = ClaimTypes.Role,
+                        NameClaimType = ClaimTypes.Name,
+                        ClockSkew = TimeSpan.Zero // Remove tolerância de tempo
+                    };
+
+                    // Eventos para debug
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnAuthenticationFailed = context =>
+                        {
+                            Console.WriteLine($"Authentication failed: {context.Exception.Message}");
+                            return Task.CompletedTask;
+                        },
+                        OnTokenValidated = context =>
+                        {
+                            Console.WriteLine("Token validated successfully");
+                            return Task.CompletedTask;
+                        },
+                        OnChallenge = context =>
+                        {
+                            Console.WriteLine($"JWT Challenge: {context.Error}, {context.ErrorDescription}");
+                            return Task.CompletedTask;
+                        }
                     };
                 })
                 .AddCookie("Cookies", options =>
                 {
                     options.LoginPath = "/login";
-                    options.LoginPath = "/login/google";
                     options.LogoutPath = "/logout";
                 });
 
@@ -102,8 +130,8 @@ namespace Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                    c.RoutePrefix = string.Empty; // Deixa o Swagger na raiz "/"
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Find.Collect");
+                    c.RoutePrefix = string.Empty;
                 });
 
                 app.MapOpenApi();
